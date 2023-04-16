@@ -1,31 +1,29 @@
 import { useState, useEffect } from "react";
 import "../auth/firebase/Firebase.css";
 import { db } from "../auth/firebase/firebase";
-import { set, ref, onValue, remove } from "firebase/database";
+import { set, ref, onValue } from "firebase/database";
 import { Link } from "react-router-dom";
 const Auth = () => {
   // write
-  const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const uuid = Date.now();
   const writeData = (e) => {
     e.preventDefault();
     set(ref(db, `/${uuid}`), {
-      todo: todo,
+      todo: todos,
       uuid: uuid,
     });
-    setTodo("");
   };
   // read
 
   useEffect(() => {
     setTodos([]);
     onValue(ref(db), (snapshot) => {
-      const data = snapshot.val();
+      let data = snapshot.val();
       if (data !== null) {
-        Object.values(data).map((todo) => {
-          setTodos((oldArray) => [...oldArray, todo]);
-        });
+        Object.values(data).map(data  = (todo)=>{
+            setTodos((oldArray) => [...oldArray, todo]);
+        })
       }
     });
   }, []);
