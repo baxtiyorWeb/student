@@ -15,6 +15,7 @@ import Home from "./../../Components/home/Home";
 import Auth from "../../../setup/auth/auth";
 import MainHeader from "./mainHeader";
 import VideoDetailPage from "../../video-detail-page/video-detail-page";
+import NotFound from "../../Components/notFound/NotFound"
 const Main = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTitle, setSearchTitle] = useState("");
@@ -82,6 +83,7 @@ const Main = () => {
             <Route path="/history" element={<History />} />
             <Route path="/auth-register" element={<Auth />} />
             <Route path="/view-lessons" element={<VideoDetailPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>

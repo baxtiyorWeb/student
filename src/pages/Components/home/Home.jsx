@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../../Components/Component.css";
 import { ApiServices } from "../../../setup/auth/api/api.servvices"
 import Videos from "./videos";
-
+import InternetConnection from "../../Components/internet-connection/internet-connection"
 // import img1 from "../../../assets/images/img1.png";
 // import img2 from "../../../assets/images/img2.png";
 // import img3 from "../../../assets/images/img3.png";
@@ -419,6 +419,7 @@ const Home = ({
                     ))
                 )} */}
                 <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                <InternetConnection/>
               </div>
             </div>
           </div>
