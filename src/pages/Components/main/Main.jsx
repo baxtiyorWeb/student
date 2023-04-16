@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-// import Layout from "../../../layout/Layout";
+import { useState } from "react";
 import { Routes, Route, useSearchParams } from "react-router-dom";
 import Settings from "../settings/Settings";
 import "../../Components/Component.css";
@@ -15,7 +14,7 @@ import Home from "./../../Components/home/Home";
 import Auth from "../../../setup/auth/auth";
 import MainHeader from "./mainHeader";
 import VideoDetailPage from "../../video-detail-page/video-detail-page";
-import NotFound from "../../Components/notFound/NotFound"
+import NotFound from "../../Components/notFound/NotFound";
 const Main = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTitle, setSearchTitle] = useState("");
@@ -38,15 +37,21 @@ const Main = () => {
             setSearchTitle={setSearchTitle}
             searchParams={searchParams}
             setSearchParams={setSearchParams}
-
           />
           <Routes>
-            <Route path="/" element={<Home searchTitle={searchTitle}
-              setSearchTitle={setSearchTitle}
-              searchParams={searchParams}
-              setSearchParams={setSearchParams}
-              handleSubmit={handleSubmit}
-              startsForm={startsForm} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  searchTitle={searchTitle}
+                  setSearchTitle={setSearchTitle}
+                  searchParams={searchParams}
+                  setSearchParams={setSearchParams}
+                  handleSubmit={handleSubmit}
+                  startsForm={startsForm}
+                />
+              }
+            />
             <Route
               path="/home"
               element={

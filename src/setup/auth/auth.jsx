@@ -16,9 +16,6 @@ const Auth = () => {
     });
     setTodo("");
   };
-  const handleTodoChange = (e) => {
-    setTodo(e.target.value);
-  };
   // read
 
   useEffect(() => {
@@ -33,18 +30,18 @@ const Auth = () => {
     });
   }, []);
   // update
-  const updateDate = () => {
-    const uuid = Date.now();
-    set(ref(db, `${uuid}`), {
-      todo,
-      uuid,
-    });
-    setTodos("");
-  };
+  // const updateDate = () => {
+  //   const uuid = Date.now();
+  //   set(ref(db, `${uuid}`), {
+  //     todo,
+  //     uuid,
+  //   });
+  //   setTodos(todo);
+  // };
   // delete
-  const handleDelete = (todo) => {
-    remove(ref(db, `/${todo.uuid}`));
-  };
+  // const handleDelete = (todo) => {
+  //   remove(ref(db, `/${todo.uuid}`));
+  // };
   return (
     <div>
       <div class="container" id="container">

@@ -5,11 +5,10 @@ import ReactPlayer from 'react-player';
 
 const VideoDetailPage = () => {
     const [data, setData] = useState(null);
-    const { id } = useParams()
     useEffect(() => {
         const getData = async () => {
             try {
-                const data = await ApiServices.fetching(`video?part=snippets&q=${id}`)
+                const data = await ApiServices.fetching(`video?part=snippets&q=ok`)
                 setData(data.data[0])
             } catch (error) {
                 console.log(error)
@@ -17,7 +16,7 @@ const VideoDetailPage = () => {
         }
         getData()
         // ApiServices.fetching('video').then(data=> console.log(data))
-    }, [id]);
+    }, []);
     return (
         <div>
             <ReactPlayer

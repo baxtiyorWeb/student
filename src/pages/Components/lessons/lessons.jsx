@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Videos from "../home/videos";
 import { ApiServices } from "../../../setup/auth/api/api.servvices";
-import { useParams } from "react-router-dom";
 const Lessons = ({
   searchTitle,
   setSearchTitle,
@@ -11,13 +9,9 @@ const Lessons = ({
   handleSubmit,
   startsForm,
 }) => {
-  const {id} = useParams()
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
-  const [selectedCategory, setSelectedCategory] = useState("new")
-  const selectedCategoryHandler = category => setSelectedCategory(category)
 
   startsForm = latest ? 3 : 1;
 
@@ -25,7 +19,7 @@ const Lessons = ({
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await ApiServices.fetching(`video?part=snippets&q=${selectedCategory}`)
+        const data = await ApiServices.fetching(`video?part=snippets&q=ok`)
         setData(data.data)
       } catch (error) {
         console.log(error)
@@ -37,7 +31,6 @@ const Lessons = ({
   if (!data) return null;
   return (
     <div>
-      <>
         <form autoComplete="off" onSubmit={handleSubmit}></form>
         <div className="home-page">
           <div className=" container">
@@ -70,7 +63,6 @@ const Lessons = ({
             </div>
           </div>
         </div>
-      </>
     </div>
   );
 };

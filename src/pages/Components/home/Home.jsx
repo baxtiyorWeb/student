@@ -9,7 +9,6 @@ import InternetConnection from "../../Components/internet-connection/internet-co
 // import img4 from "../../../assets/images/img4.png";
 // import img5 from "../../../assets/images/img5.png";
 // import img6 from "../../../assets/images/img6.png";
-import axios from "axios";
 const Home = ({
   searchTitle,
   setSearchTitle,
@@ -19,11 +18,8 @@ const Home = ({
   startsForm,
 }) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
-  const [selectedCategory, setSelectedCategory] = useState("new")
-  const selectedCategoryHandler = category => setSelectedCategory(category)
 
   startsForm = latest ? 3 : 1;
 
@@ -32,7 +28,7 @@ const Home = ({
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await ApiServices.fetching(`video?part=snippets&q=${selectedCategory}`)
+        const data = await ApiServices.fetching(`video?part=snippets&q=ok`)
         setData(data.data)
       } catch (error) {
         console.log(error)

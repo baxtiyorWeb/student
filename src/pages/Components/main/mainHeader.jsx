@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 const mainHeader = ({
   query,
   searchParams,
@@ -11,7 +10,6 @@ const mainHeader = ({
     e.preventDefault();
     const form = e.target;
     const query = form.search.value;
-    const latest = searchParams.has("latest");
 
     const param = {};
 
