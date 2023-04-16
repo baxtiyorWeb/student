@@ -15,7 +15,7 @@ main .container {
   align-items: center;
 }
 main .container .block {
-  width: 80%;
+  width: 80%
 }
 
 .side-bar {
@@ -27,6 +27,7 @@ main .container .block {
   z-index: 5;
   background-color: #fff;
   padding: 5px;
+  box-shadow: 3px 5px 15px  rgba(3, 1, 1, 0.5);
 }
 .side-bar .container .navigation {
   width: 100%;
@@ -37,7 +38,7 @@ main .container .block {
 }
 .side-bar .container .navigation .side-bar-link {
   padding: 10px;
-  margin-top: 5px;
+  margin-top: 0px;
   text-decoration: none;
   color: #000;
   display: flex;
@@ -47,7 +48,7 @@ main .container .block {
   font-family: "Roboto", sans-serif;
 }
 .side-bar .container .navigation .side-bar-link:hover {
-  background-color: rgb(167, 167, 167);
+  background-color: rgba(1, 1, 1, 0.3);
   color: white;
 }
 .side-bar .container .navigation .side-bar-link:focus {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Videos from "../home/videos";
 import { ApiServices } from "../../../setup/auth/api/api.servvices";
+import InternetConnection from "../../Components/internet-connection/internet-connection"
 const Lessons = ({
   searchTitle,
   setSearchTitle,
@@ -51,13 +52,14 @@ const Lessons = ({
                     marginTop: "10px",
                     marginBottom: "10px",
                     borderBottom: "1px solid rgb(80,80,80)",
-                    padding: "5px",
+                    padding: "5px"
                   }}
                 >
                   bu sahifada siz video darsliklarni ko'rishingiz mumkin
                 </h3>
                 <div className="video-card-block">
                   <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                  <InternetConnection/>
                 </div>
               </div>
             </div>

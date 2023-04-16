@@ -42,14 +42,14 @@ const Auth = () => {
   // };
   return (
     <div>
-      <div class="container" id="container">
-        <div class="form-container sign-up-container">
+      <div className="container" id="container">
+        <div className="form-container sign-up-container">
           <div onSubmit={writeData} className="form">
             <h1>Create Account</h1>
-            <div class="social-container">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-google-plus-g"></i>
-              <i class="fab fa-linkedin-in"></i>
+            <div className="social-container">
+              <i className="fab fa-facebook-f"></i>
+              <i className="fab fa-google-plus-g"></i>
+              <i className="fab fa-linkedin-in"></i>
             </div>
             <span>or use your email for registration</span>
             <input type="text" placeholder="Name" id="username" />
@@ -58,12 +58,12 @@ const Auth = () => {
             <button id="signUp">Sign Up</button>
           </div>
         </div>
-        <div class="form-container sign-in-container">
+        <div className="form-container sign-in-container">
           <div className="form">
-            <div class="social-container sclc">
-              <i class="bx bxl-google-plus"></i>
-              <i class="fas fa-google-plus-g"></i>
-              <i class="fas fa-linkedin-in"></i>
+            <div className="social-container sclc">
+              <i className="bx bxl-google-plus"></i>
+              <i className="fas fa-google-plus-g"></i>
+              <i className="fas fa-linkedin-in"></i>
             </div>
             <span>or use your account</span>
             <input type="text" placeholder="Email" id="namesignIn" />
