@@ -58,7 +58,7 @@ const Lessons = ({
                   bu sahifada siz video darsliklarni ko'rishingiz mumkin
                 </h3>
                 <div className="video-card-block">
-                  <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                  <Videos data={data} searchTitle={searchTitle} postQuery={postQuery}  />
                   <InternetConnection/>
                 </div>
               </div>

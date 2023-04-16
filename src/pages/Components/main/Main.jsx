@@ -28,71 +28,80 @@ const Main = () => {
   };
   return (
     <main>
-      <div className="container">
-        <div className="block">
-          <MainHeader
-            query={query}
-            setQuery={setQuery}
-            searchTitle={searchTitle}
-            setSearchTitle={setSearchTitle}
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-          />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  searchTitle={searchTitle}
-                  setSearchTitle={setSearchTitle}
-                  searchParams={searchParams}
-                  setSearchParams={setSearchParams}
-                  handleSubmit={handleSubmit}
-                  startsForm={startsForm}
-                />
-              }
-            />
-            <Route
-              path="/home"
-              element={
-                <Home
-                  searchTitle={searchTitle}
-                  setSearchTitle={setSearchTitle}
-                  searchParams={searchParams}
-                  setSearchParams={setSearchParams}
-                  handleSubmit={handleSubmit}
-                  startsForm={startsForm}
-                />
-              }
-            />
-            <Route path="/posts" element={<Comments />} />
-            <Route path="/videos" element={<Videos />} />
-            <Route
-              path="/lessons"
-              element={
-                <Lessons
-                  searchTitle={searchTitle}
-                  setSearchTitle={setSearchTitle}
-                  searchParams={searchParams}
-                  setSearchParams={setSearchParams}
-                  handleSubmit={handleSubmit}
-                  startsForm={startsForm}
-                />
-              }
-            />
-            <Route path="/account" element={<Account />} />
-            <Route path="/new-lessons" element={<NewLessons />} />
-            <Route path="/new-group" element={<NewGroup />} />
-            <Route path="/new-content" element={<NewContact />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/auth-register" element={<Auth />} />
-            <Route path="/view-lessons" element={<VideoDetailPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </div>
-    </main>
+    <div className="container">
+    <div className="block">
+    <MainHeader
+    query={query}
+    setQuery={setQuery}
+    searchTitle={searchTitle}
+    setSearchTitle={setSearchTitle}
+    searchParams={searchParams}
+    setSearchParams={setSearchParams}
+    />
+    <Routes>
+    <Route
+    path="/"
+    element={
+      <Home
+      searchTitle={searchTitle}
+      setSearchTitle={setSearchTitle}
+      searchParams={searchParams}
+      setSearchParams={setSearchParams}
+      handleSubmit={handleSubmit}
+      startsForm={startsForm}
+      />
+    }
+    />
+    <Route
+    path="/home"
+    element={
+      <Home
+      searchTitle={searchTitle}
+      setSearchTitle={setSearchTitle}
+      searchParams={searchParams}
+      setSearchParams={setSearchParams}
+      handleSubmit={handleSubmit}
+      startsForm={startsForm}
+      />
+    }
+    />
+    <Route path="/posts" element={<Comments />} />
+    <Route path="/videos" element={<Videos />} />
+    <Route
+    path="/lessons"
+    element={
+      <Lessons
+      searchTitle={searchTitle}
+      setSearchTitle={setSearchTitle}
+      searchParams={searchParams}
+      setSearchParams={setSearchParams}
+      handleSubmit={handleSubmit}
+      startsForm={startsForm}
+      />
+    }
+    />
+    <Route path="/account" element={<Account />} />
+    <Route path="/new-lessons" element={<NewLessons />} />
+    <Route path="/new-group" element={<NewGroup />} />
+    <Route path="/new-content" element={<NewContact />} />
+    <Route path="/settings" element={<Settings />} />
+    <Route path="/history" element={<History 
+    searchTitle={searchTitle}
+    setSearchTitle={setSearchTitle}
+    searchParams={searchParams}
+    setSearchParams={setSearchParams}
+    handleSubmit={handleSubmit}
+    startsForm={startsForm}
+    />
+  }
+  />
+  <Route path="/auth-register" element={<Auth />} />
+  <Route path="/view-lessons" element={<VideoDetailPage />} />
+  <Route path="*" element={<NotFound />} />
+  </Routes>
+  </div>
+  </div>
+  </main>
   );
 };
 

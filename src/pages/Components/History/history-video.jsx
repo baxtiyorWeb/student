@@ -9,18 +9,6 @@ const Videos = ({ data, searchTitle, postQuery }) => {
     localStorage.setItem("api", video);
     localStorage.setItem("title", title);
     localStorage.setItem("description", description);
-    const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({history, title, description})
-  };
-
-  fetch('https://63a5c4fcf8f3f6d4abff62b9.mockapi.io/api/v1/history', requestOptions)
-  .then(response => response.json())
-  .then(data => {
-
-  });
-
   }
    
 
@@ -39,9 +27,9 @@ return (
     <video
     src={item.video}
     onClick={(e) =>
-    storage(item.video, item.title, item.description, item.video) 
+    storage(item.history, item.description, item.title) 
     ? console.log("error")
-    : navigateFunc(item.video)
+    : navigateFunc(item.history)
 
   }
   ></video>
