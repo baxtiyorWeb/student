@@ -1,6 +1,7 @@
 main {
   width: 100%;
   margin: 0 auto;
+  background: linear-gradient(to right, #61ACF9, #7970ED);
   /* border: 1px solid #000; */
 }
 
@@ -15,7 +16,7 @@ main .container {
   align-items: center;
 }
 main .container .block {
-  width: 80%
+  width: 80%;
 }
 
 .side-bar {
@@ -27,7 +28,8 @@ main .container .block {
   z-index: 5;
   background-color: #fff;
   padding: 5px;
-  box-shadow: 3px 5px 15px  rgba(3, 1, 1, 0.5);
+  box-shadow: 3px 5px 15px rgba(3, 1, 1, 0.5);
+  background: linear-gradient(to top, #61ACF9, #FE54CC);
 }
 .side-bar .container .navigation {
   width: 100%;
@@ -38,25 +40,26 @@ main .container .block {
 }
 .side-bar .container .navigation .side-bar-link {
   padding: 10px;
-  margin-top: 0px;
+  margin-top: -5px;
   text-decoration: none;
-  color: #000;
+  color: #F6F6F6;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   transition: 0.2s ease;
   font-family: "Roboto", sans-serif;
+  font-size: 20px;
 }
 .side-bar .container .navigation .side-bar-link:hover {
   background-color: rgba(1, 1, 1, 0.3);
   color: white;
 }
 .side-bar .container .navigation .side-bar-link:focus {
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(230, 230, 230, 0.344);
   color: white;
 }
 .side-bar .container .navigation .side-bar-link:active {
-  background-color: rgb(173, 173, 173);
+  background-color: rgb(230, 230, 230, 0.144);
   color: white;
 }
 .side-bar .container .navigation .side-bar-link i {
@@ -75,18 +78,24 @@ header .container {
   align-items: center;
 }
 .search-box {
-  border: 2px solid rgb(173, 173, 173);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #fff;
 }
 
 .search-box input {
   width: 350px;
   padding: 5px;
   outline: none;
-  color: rgb(80, 80, 80);
+  color: #D5D5D5;
   border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+.search-box input::placeholder{
+  color: #ccc;
 }
 .search-box button i {
   padding: 5px;
@@ -105,7 +114,7 @@ header .container {
 }
 
 .about-platform .title {
-  color: rgb(163, 163, 163);
+  color: #123;
   background-color: rgb(226, 226, 226);
   margin-bottom: 30px;
 }
@@ -114,7 +123,7 @@ header .container {
   height: 150px;
   text-anchor: middle;
   font-size: 20px;
-  color: rgba(105, 105, 105, 0.918);
+  color: rgba(15, 105, 105, 0.918);
   border-bottom: 1px solid rgb(156, 156, 156);
   margin-bottom: 30px;
 }
@@ -124,6 +133,7 @@ header .container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
 }
 
 .box .box-list {
@@ -161,13 +171,13 @@ header .container {
   list-style-type: none;
   margin: 5px;
   text-align: center;
-  background-color: rgb(199, 198, 198);
-  color: rgb(71, 71, 71);
+  background-color: lightgreen;
   padding: 5px;
   border-radius: 3px;
   font-size: 16px;
   user-select: none;
   cursor: text;
+  color: #fff;
 }
 .courses-about ul li:hover {
   background-color: rgb(175, 175, 175);
@@ -177,35 +187,55 @@ header .container {
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   margin-top: 30px;
+  justify-items: center;
+  flex-direction: column;
 }
 
 .language-about .lang span {
   width: 250px;
   font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 1px dimgrey;
 }
 .language-about .lang {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   border: 1px solid rgb(163, 163, 163);
   margin: 5px;
+  box-shadow: 1px 3px 3px 1px #101010;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  background-color: #021669;
+  color: #ff2;
+  padding: 5px;
+
+}
+.language-about .lang:active {
+  box-shadow: 0 0 0 0;
+  transform: translateY(5px);
+}
+.language-about .lang ul {
+  width: 100%;
 }
 .language-about .lang ul li {
+  width: 100%;
   list-style: none;
   font-style: 23px;
   padding: 5px;
-  margin: 5px;
+  margin-top: 5px;
   border-bottom: 1px solid #000;
 }
 .lessons-about-description {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid blue;
   text-align: center;
 }
 .s-log-icon {
@@ -222,7 +252,7 @@ header .container {
   margin-left: 50%;
 }
 .flex-min-group {
-  width: 300px;
+  width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,13 +302,14 @@ header .container {
 
 .video-card-block {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 20px;
   padding: 5px;
-  background-color: rgb(235, 235, 235);
+  background-color: #021169;
+  justify-items: center;
 }
 .video-card-block .videos {
-  width: 280px;
+  width: 100%;
   height: 350px;
   box-shadow: 1px 1px 3px 5px gray;
   border-radius: 5px;
@@ -288,7 +319,7 @@ header .container {
 }
 
 .video-card-block .videos .video {
-  width: 100%;
+  width: 50%;
   height: 200px;
   cursor: pointer;
 }
@@ -311,4 +342,63 @@ header .container {
   border-bottom: 1px solid rgb(156, 156, 156);
   border-top: 1px solid rgb(156, 156, 156);
   text-align: justify;
+}
+.connection {
+  width: 250px;
+  height: 65px;
+  border: 2px solid rgb(70, 70, 70);
+  position: fixed;
+  right: 0px;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 0px gray;
+  transform: translateY(0);
+  transition: 0.3s ease-in-out;
+}
+.hide-connect{
+  transform: translateY(200px);
+}
+.connection span:nth-of-type(1) {
+  color: rgb(231, 18, 18);
+  font-weight: 600;
+}
+
+.connection span:nth-of-type(2) {
+  color: rgb(9, 228, 191);
+}
+.connection i {
+  position: relative;
+}
+.connection i::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  right: 12%;
+  transform: rotate(45deg) translateX(6px) translateY(3px);
+}
+
+
+.detect-block{
+  width: 250px;
+  height: 80px;
+  position: fixed;
+  right: 30px;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.link-btn{
+  border-radius: 10px;
+  cursor: pointer;
 }

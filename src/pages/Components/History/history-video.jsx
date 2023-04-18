@@ -25,7 +25,7 @@ return (
     <div className="videos" key={item.id}>
     <div className="video">
     <video
-    src={item.video}
+    src={item.history}
     onClick={(e) =>
     storage(item.history, item.description, item.title) 
     ? console.log("error")

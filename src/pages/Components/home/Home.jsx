@@ -3,6 +3,8 @@ import "../../Components/Component.css";
 import { ApiServices } from "../../../setup/auth/api/api.servvices"
 import Videos from "./videos";
 import InternetConnection from "../../Components/internet-connection/internet-connection"
+import CardLessons from "./card-lessons/card-lessons"
+
 // import img1 from "../../../assets/images/img1.png";
 // import img2 from "../../../assets/images/img2.png";
 // import img3 from "../../../assets/images/img3.png";
@@ -77,7 +79,7 @@ const Home = ({
               <div className="about-description">
                 <div className="description">
                   Dasturlashga oid to'liq va amaliy kurslarga boy platformaga
-                  xush kelibsiz. Bizda barcha pullik kurslarni bepulga
+                  xush kelibsiz. Bizda barcha  kurslarni bepulga
                   o'rganishingiz mumkin.
                 </div>
               </div>
@@ -99,280 +101,7 @@ const Home = ({
                   <li>VUE</li>
                 </ul>
               </div>
-              <div className="language-about">
-                <div className="html lang">
-                  <div className="lessons-about-description">
-                    <span>HTML</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="css lang">
-                  <div className="lessons-about-description">
-                    <span>CSS</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="sass lang">
-                  <div className="lessons-about-description">
-                    <span>SASS</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="bootstrap lang">
-                  <div className="lessons-about-description">
-                    <span>BOOTSTRAP</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="javascript lang">
-                  <div className="lessons-about-description">
-                    <span>JAVASCRIPT</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="react lang">
-                  <div className="lessons-about-description">
-                    <span>REACT</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="angular lang">
-                  <div className="lessons-about-description">
-                    <span>ANGULAR</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-                <div className="vue lang">
-                  <div className="lessons-about-description">
-                    <span>VUE</span>
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-                </div>
-              </div>
+              
               <h3
                 style={{
                   marginTop: "10px",
@@ -384,6 +113,8 @@ const Home = ({
                 sizga ba'zi video darslarni tavsiya qilamiz
               </h3>
               <div className="video-card-block">
+              <CardLessons/>
+
                 {/* {loading ? (
                   <h4>loding ....</h4>
                 ) : (
@@ -416,7 +147,9 @@ const Home = ({
                 )} */}
                 <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
                 <InternetConnection/>
-              </div>
+                </div>
+                
+              
             </div>
           </div>
         </div>
