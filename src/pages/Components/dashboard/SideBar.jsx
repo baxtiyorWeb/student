@@ -46,7 +46,7 @@ const sideBar = () => {
             <i className="fas fa-regular fa-clock-rotate-left"></i>
             <span>History</span>
           </Link>
-          <Link className="side-bar-link" to="/auth-register">
+          <Link className="side-bar-link" to="/register">
             <i className="fas fa-solid fa-right-to-bracket"></i>
             <span>Login</span>
           </Link>

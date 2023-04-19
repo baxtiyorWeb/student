@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
-
+// import HtmlEntry from './lessons/html/html-entry';
 const CardLessons = () => {
   const navigate = useNavigate()
 
@@ -39,7 +39,7 @@ const CardLessons = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="link-btn" onClick={()=> navigate("/history")}>enroll</button>
+                    <button className="link-btn" onClick={()=> navigate("/html")}>enroll</button>
                   </div>
                  
               </div>
@@ -559,9 +559,7 @@ const CardLessons = () => {
                     </div>
                     <button className="link-btn">enroll</button>
                   </div>
-                 
               </div>
-              
         </div>
     );
 };
