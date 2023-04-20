@@ -18,7 +18,6 @@ const Videos = ({ data, searchTitle, postQuery }) => {
     fetch('https://63a5c4fcf8f3f6d4abff62b9.mockapi.io/api/v1/history', requestOptions)
     .then(response => response.json())
     .then(data => {
-
     });
 
   }
