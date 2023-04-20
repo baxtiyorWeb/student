@@ -48,7 +48,7 @@ const sideBar = () => {
           </Link>
           <Link className="side-bar-link" to="/register">
             <i className="fas fa-solid fa-right-to-bracket"></i>
-            <span>Login</span>
+            <span>LogOut</span>
           </Link>
         </div>
       </div>

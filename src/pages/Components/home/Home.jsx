@@ -4,13 +4,8 @@ import { ApiServices } from "../../../setup/auth/api/api.servvices"
 import Videos from "./videos";
 import InternetConnection from "../../Components/internet-connection/internet-connection"
 import CardLessons from "./card-lessons/card-lessons"
+import { Link } from "react-router-dom"
 
-// import img1 from "../../../assets/images/img1.png";
-// import img2 from "../../../assets/images/img2.png";
-// import img3 from "../../../assets/images/img3.png";
-// import img4 from "../../../assets/images/img4.png";
-// import img5 from "../../../assets/images/img5.png";
-// import img6 from "../../../assets/images/img6.png";
 const Home = ({
   searchTitle,
   setSearchTitle,
@@ -90,16 +85,14 @@ const Home = ({
                 <div className="box-list">Bepul</div>
               </div>
               <div className="courses-about">
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>SASS</li>
-                  <li>BOOTSTRSP</li>
-                  <li>JAVASCRIPT</li>
-                  <li>REACT</li>
-                  <li>ANGULAR</li>
-                  <li>VUE</li>
-                </ul>
+                  <Link to="#">HTML</Link>
+                  <Link to="#">CSS</Link>
+                  <Link to="#">SASS</Link>
+                  <Link to="#">BOOTSTRAP</Link>
+                  <Link to="#">JAVASCRIPT</Link>
+                  <Link to="#">REACT</Link>
+                  <Link to="#">ANGULAR</Link>
+                  <Link to="#">VUE</Link>
               </div>
               
               <h3

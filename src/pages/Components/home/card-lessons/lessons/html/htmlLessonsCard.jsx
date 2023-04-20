@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "../../../../Component.css";
 import { ApiServices } from './../../../../../../setup/auth/api/api.servvices';
 import InternetConnection from './../../../../internet-connection/internet-connection';
-import CardLessons from './../../card-lessons';
-import Videos from './../../../../Videos/Videos';
-import { useNavigate } from "react-router-dom";
+import HtmlVideo from "./htm-video";
+
+// import CardLessons from './../../card-lessons';
+// import Videos from "../../../videos";
+// import { useNavigate } from "react-router-dom";
 
 // import img1 from "../../../assets/images/img1.png";
 // import img2 from "../../../assets/images/img2.png";
@@ -23,7 +25,7 @@ const HtmlLessons = ({
   const [data, setData] = useState([]);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   startsForm = latest ? 3 : 1;
 
 
@@ -66,7 +68,7 @@ const HtmlLessons = ({
   // };
 
 
-
+ 
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}></form>
@@ -88,46 +90,11 @@ const HtmlLessons = ({
               >
                 html bo'yicha to'liq darslik
               </h3>
+              <p style={{color: "lightgreen", fontWeight: "600"}}>HTML (HyperTextMarkupLanguage ya'ni 
+                "GiperMatn belgilash tili hisoblanadi") Html web sitening strukturasi bo'yicha masul 
+              hisoblanadi frontend uchun kerakli texnologiyalardan biri sizga tushunarli bo'lishi uchun kursimizdagi videolarni maslahat beramiz </p>
               <div className="video-card-block">
-              <div className="language-about">
-              <div className="html lang">
-                  <div className="lessons-about-description">
-                    <span>html</span>
-                  <ul>
-                    <li>to'liq video darslik</li>
-                    <li>web-site to'g'ri strukturasi</li>
-                    <li>tags</li>
-                    <li>praktikalar</li>
-                    <li>vazifalar</li>
-                  </ul>
-
-                    <div>
-                      <div className="list">
-                        <div className="flex-min-group">
-                          <div className="s-log-icon">
-                            <b>100</b>
-                            <i className="fas fa-eye"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>200</b>
-                            <i className="fas fa-close"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>300</b>
-                            <i className="fas fa-solid fa-right-to-bracket"></i>
-                          </div>
-                          <div className="s-log-icon">
-                            <b>400</b>
-                            <i className="fas fa-graduation-cap"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button className="link-btn" onClick={()=> navigate("/html")}>enroll</button>
-                  </div>
-                 
-              </div>
-              </div>
+              
 
                 {/* {loading ? (
                   <h4>loding ....</h4>
@@ -159,7 +126,9 @@ const HtmlLessons = ({
                       </div>
                     ))
                 )} */}
-                <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                {/*<Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />*/}
+                <HtmlVideo data={data} searchTitle={searchTitle} postQuery={postQuery} />
+
                 <InternetConnection/>
               </div>
             </div>

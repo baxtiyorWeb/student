@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-const Videos = ({ data, searchTitle, postQuery }) => {
+const HtmlVideo = ({ data, searchTitle, postQuery }) => {
   const navigate = useNavigate();
   function navigateFunc(item) {
     navigate(`/view-lessons?${item}`, { replace: true });
@@ -29,7 +29,7 @@ const Videos = ({ data, searchTitle, postQuery }) => {
     {data.filter(data = (value)=>{
       if (searchTitle === "") {
         return value;
-      } else if (value.title.toLowerCase().includes(postQuery)) {
+      } else if (value.title.toLowerCase().includes('html')) {
         return value;
       }
     })
@@ -58,4 +58,4 @@ const Videos = ({ data, searchTitle, postQuery }) => {
     );
 };
 
-export default Videos;
+export default HtmlVideo;
