@@ -1,16 +1,21 @@
 import { useState } from "react";
 import "../auth/firebase/Firebase.css";
-import {auth,  db , signInWithGoogle} from "../auth/firebase/firebase";
-import {  getFirestore, addDoc, collection  , query, getDocs, where} from "firebase/firestore";
-import { Link, useNavigate } from "react-router-dom";
+import {auth,  db  } from "../auth/firebase/firebase";
+import { addDoc, collection  , 
+  // query, getDocs, where
+} from "firebase/firestore";
+import { Link,
+  //  useNavigate
+   } from "react-router-dom";
 import {  
   createUserWithEmailAndPassword ,
- googleProvider, 
- GoogleAuthProvider,
- signInWithPopup,   } from 'firebase/auth';
+//  googleProvider, 
+//  GoogleAuthProvider,
+//  signInWithPopup,  
+ } from 'firebase/auth';
 
 const Auth = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
@@ -29,6 +34,7 @@ const Auth = () => {
   } catch (err) {
     console.error(err);
     alert(err.message);
+    setError('')
   }
 };
 

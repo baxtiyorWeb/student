@@ -39,30 +39,34 @@
 
 // export default SignIn;
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,
+  //  useNavigate
+   } from "react-router-dom";
 import {
   auth,
   logInWithEmailAndPassword,
   signInWithGoogle,
-  googleProvider,
+  // googleProvider,
 } from "../auth/firebase/firebase";
 import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
+  // createUserWithEmailAndPassword,
+  // GoogleAuthProvider,
+  // signInWithPopup,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
+  const [user, loading] = useAuthState(auth);
+  // const navigatee = useNavigate();
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/login");
+    if (user){
+      // navigatee("/login");
+    } 
   }, [user, loading]);
   return (
     <div className="login">
