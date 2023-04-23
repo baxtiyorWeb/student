@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 const mainHeader = ({
   query,
   searchParams,
   setSearchTitle,
   setSearchParams,
-  searchTitle
+  searchTitle,
+  setToggle,
+  toggle
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +23,10 @@ const mainHeader = ({
     <header>
       <div className="container">
         <div className="search-box">
+          <div className="btn" onClick={(e)=> setToggle(!toggle)}>
+            <i className="detailsMe   nuItem bx bx-menu"></i>
+          </div>
+          <Link className="upragade" to="#" >Upragade</Link>
           <form autoComplete="off" onSubmit={handleSubmit}>
             <input
               type="search"

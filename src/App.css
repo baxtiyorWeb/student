@@ -7,3 +7,21 @@
   font-family: "Roboto" sans-serif;
   outline: none;
 }
+*::selection{
+  background-color: rgba(0, 0, 0, 0.486);
+  color: #222;
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar{
+  width: 20px;
+  background-color: rgb(22, 22, 22);
+}
+::-webkit-scrollbar-button{
+  background-color: rgb(22, 22, 22);
+}
+::-webkit-scrollbar-thumb{
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: rgb(10, 10, 10);
+}

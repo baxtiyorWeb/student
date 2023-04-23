@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import "../../../../Component.css";
-import { ApiServices } from './../../../../../../setup/auth/api/api.servvices';
-import InternetConnection from './../../../../internet-connection/internet-connection';
+import { ApiServices } from "./../../../../../../setup/auth/api/api.servvices";
+import InternetConnection from "./../../../../internet-connection/internet-connection";
 import HtmlVideo from "./htm-video";
+import HtmlCodes from "./html-codes/html-codes";
+import HtmlSideBar from "./html-codes/html-side-bar/html-side-bar";
 
 // import CardLessons from './../../card-lessons';
 // import Videos from "../../../videos";
@@ -28,18 +30,16 @@ const HtmlLessons = ({
   // const navigate = useNavigate()
   startsForm = latest ? 3 : 1;
 
-
-
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await ApiServices.fetching(`video?part=snippets&q=ok`)
-        setData(data.data)
+        const data = await ApiServices.fetching(`video?part=snippets&q=ok`);
+        setData(data.data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
-    getData()
+    };
+    getData();
     // ApiServices.fetching('video').then(data=> console.log(data))
   }, []);
 
@@ -67,13 +67,11 @@ const HtmlLessons = ({
   //   getData();
   // };
 
-
- 
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}></form>
-      <div className="home-page">
-        <div className=" container">
+      <div className="home-page html-page-lessons">
+        <div className="container">
           <div className="block">
             <div className="about-platform">
               <div className="title">
@@ -90,12 +88,17 @@ const HtmlLessons = ({
               >
                 html bo'yicha to'liq darslik
               </h3>
-              <p style={{color: "lightgreen", fontWeight: "600"}}>HTML (HyperTextMarkupLanguage ya'ni 
-                "GiperMatn belgilash tili hisoblanadi") Html web sitening strukturasi bo'yicha masul 
-              hisoblanadi frontend uchun kerakli texnologiyalardan biri sizga tushunarli bo'lishi uchun kursimizdagi videolarni maslahat beramiz </p>
-              <div className="video-card-block">
-              
+              <p style={{ color: "lightgreen", fontWeight: "600" }}>
+                HTML (HyperTextMarkupLanguage ya'ni "GiperMatn belgilash tili
+                hisoblanadi") Html web sitening strukturasi bo'yicha masul
+                hisoblanadi frontend uchun kerakli texnologiyalardan biri sizga
+                tushunarli bo'lishi uchun kursimizdagi video darsliklarni
+                ko'rishni maslahat beramiz{" "}
+              </p>
 
+              <HtmlCodes/>
+              <HtmlSideBar/>
+              <div className="video-card-block">
                 {/* {loading ? (
                   <h4>loding ....</h4>
                 ) : (
@@ -127,9 +130,13 @@ const HtmlLessons = ({
                     ))
                 )} */}
                 {/*<Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />*/}
-                <HtmlVideo data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                <HtmlVideo
+                  data={data}
+                  searchTitle={searchTitle}
+                  postQuery={postQuery}
+                />
 
-                <InternetConnection/>
+                <InternetConnection />
               </div>
             </div>
           </div>

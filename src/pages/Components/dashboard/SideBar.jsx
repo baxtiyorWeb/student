@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../Components/Component.css";
-const sideBar = () => {
+const sideBar = ({ toggle }) => {
   return (
-    <div className="side-bar">
+    <div className={!toggle ? "side-bar" : "side-bar-hide"}>
       <div className="container">
         <div className="navigation">
           <Link className="side-bar-link" to="/home">
@@ -14,9 +14,9 @@ const sideBar = () => {
             <i className="fa-solid fa-pen-to-square"></i>
             <span>Posts</span>
           </Link>
-          <Link className="side-bar-link" to="/videos">
+          <Link className="side-bar-link" to="/live-stream">
             <i className="fa-brands fa-youtube"></i>
-            <span> Videos</span>
+            <span> Live stream</span>
           </Link>
           <Link className="side-bar-link" to="/lessons">
             <i className="fa-solid fa-chalkboard"></i>

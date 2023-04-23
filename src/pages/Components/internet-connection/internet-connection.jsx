@@ -8,7 +8,7 @@ const InternetConnection = (props) => {
 			setHide(hide ? "hide-connect connection" : "show-connect connection")
 		}, 5000);
       setTimeout(() => {
-      setHide2(hide2 ? "hide-connect detect-block" : "show-connect detect-block")
+      setHide2(hide2 ? "hide-connection detect-block" : "show-connection detect-block")
     }, 5000);
 
 

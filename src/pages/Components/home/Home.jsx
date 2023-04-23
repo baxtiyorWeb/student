@@ -5,7 +5,7 @@ import Videos from "./videos";
 import InternetConnection from "../../Components/internet-connection/internet-connection"
 import CardLessons from "./card-lessons/card-lessons"
 import { Link } from "react-router-dom"
-
+import { useParams} from "react-router-dom";
 const Home = ({
   searchTitle,
   setSearchTitle,
@@ -17,6 +17,7 @@ const Home = ({
   const [data, setData] = useState([]);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
+   const {videoUrlId} = useParams()
 
   startsForm = latest ? 3 : 1;
 
@@ -67,6 +68,7 @@ const Home = ({
       <div className="home-page">
         <div className=" container">
           <div className="block">
+            {/* <Slider/> */}
             <div className="about-platform">
               <div className="title">
                 <h2>Students - Dasturlash Kurslari</h2>
@@ -85,7 +87,7 @@ const Home = ({
                 <div className="box-list">Bepul</div>
               </div>
               <div className="courses-about">
-                  <Link to="#">HTML</Link>
+                  <Link to="/html-lessons">HTML</Link>
                   <Link to="#">CSS</Link>
                   <Link to="#">SASS</Link>
                   <Link to="#">BOOTSTRAP</Link>
@@ -108,41 +110,9 @@ const Home = ({
               <div className="video-card-block">
               <CardLessons/>
 
-                {/* {loading ? (
-                  <h4>loding ....</h4>
-                ) : (
-                  data
-                    .filter(value => {
-                      if (searchTitle === "") {
-                        return value;
-                      } else if (
-                        value.title.toLowerCase().includes(postQuery)
-                      ) {
-                        return value;
-                      }
-                    })
-                    .map((item) => (
-                      <div
-                        className="videos"
-                        key={item.id}
-                      >
-                        <div className="video">
-                          <video src={item.video}></video>
-                        </div>
-                        <div className="video-title">
-                          <h3>{item.title}</h3>
-                        </div>
-                        <div className="description">
-                          <p>{item.description}</p>
-                        </div>
-                      </div>
-                    ))
-                )} */}
-                <Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />
+                <Videos videoUrlId={videoUrlId} data={data} searchTitle={searchTitle} postQuery={postQuery} />
                 <InternetConnection/>
                 </div>
-                
-              
             </div>
           </div>
         </div>

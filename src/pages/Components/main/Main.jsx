@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, useSearchParams } from "react-router-dom";
+import { Routes, Route, useSearchParams} from "react-router-dom";
 import Settings from "../settings/Settings";
 import "../../Components/Component.css";
 import Comments from "./../posts/Components/comments/Comments";
@@ -18,7 +18,8 @@ import NotFound from "../../Components/notFound/NotFound";
 import Login from "../../../setup/auth/SignIn";
 import HtmlEntry from "../home/card-lessons/lessons/html/html-entry";
 import HtmlLessons from "../home/card-lessons/lessons/html/htmlLessonsCard";
-const Main = () => {
+import Register from "../Register/Register";
+const Main = ({toggle, setToggle}) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTitle, setSearchTitle] = useState("");
   const [query, setQuery] = useState(searchParams.get("query"));
@@ -31,16 +32,19 @@ const Main = () => {
   };
   return (
     <main>
-      <div className="container">
-        <div className="block">
-          <MainHeader
+        <MainHeader
             query={query}
             setQuery={setQuery}
             searchTitle={searchTitle}
             setSearchTitle={setSearchTitle}
             searchParams={searchParams}
             setSearchParams={setSearchParams}
+            toggle={toggle}
+            setToggle={setToggle}
           />
+      <div className="container">
+        <div className={!toggle ? "block": "hide-block"}>
+        
           <Routes>
             <Route
               path="/"
@@ -69,7 +73,7 @@ const Main = () => {
               }
             />
             <Route path="/posts" element={<Comments />} />
-            <Route path="/videos" element={<Videos />} />
+            <Route path="/live-stream" element={<Videos />} />
             <Route
               path="/lessons"
               element={
@@ -102,7 +106,8 @@ const Main = () => {
               }
             />
             <Route path="/register" element={<Auth />} />
-            <Route path="/view-lessons" element={<VideoDetailPage />} />
+            <Route exact path="/view-lessons/:videoUrlId" element={<VideoDetailPage /> }
+            />
             <Route path="/login" element={<Login />} />
             <Route
               path="/html"
@@ -124,6 +129,7 @@ const Main = () => {
                   handleSubmit={handleSubmit}
                   startsForm={startsForm}/>}/>
             <Route path="*" element={<NotFound />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
       </div>
