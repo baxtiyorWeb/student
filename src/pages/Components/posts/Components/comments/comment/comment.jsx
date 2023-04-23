@@ -1,13 +1,13 @@
 import React from "react"
-import io from "socket.io-client"
+// import io from "socket.io-client"
 
 
 
 
-const Comment = (e)=>{
-    const conntectSocket = ()=>{
-       io("http://localhost:9999")
-    }
+const Comment = ()=>{
+    // const conntectSocket = ()=>{
+    //    io("http://localhost:9999")
+    // }
 
     return(
         <div className="posts">
