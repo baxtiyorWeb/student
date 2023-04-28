@@ -2,14 +2,8 @@ import { useState, useEffect } from "react";
 import "../../../../Component.css";
 import { ApiServices } from "./../../../../../../setup/auth/api/api.servvices";
 import InternetConnection from "./../../../../internet-connection/internet-connection";
-import HtmlVideo from "./htm-video";
 import HtmlCodes from "./html-codes/html-codes";
 import HtmlSideBar from "./html-codes/html-side-bar/html-side-bar";
-
-// import CardLessons from './../../card-lessons';
-// import Videos from "../../../videos";
-// import { useNavigate } from "react-router-dom";
-
 // import img1 from "../../../assets/images/img1.png";
 // import img2 from "../../../assets/images/img2.png";
 // import img3 from "../../../assets/images/img3.png";
@@ -25,7 +19,6 @@ const HtmlLessons = ({
   startsForm,
 }) => {
   const [data, setData] = useState([]);
-  const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
   // const navigate = useNavigate()
   startsForm = latest ? 3 : 1;
@@ -35,6 +28,7 @@ const HtmlLessons = ({
       try {
         const data = await ApiServices.fetching(`video?part=snippets&q=ok`);
         setData(data.data);
+        
       } catch (error) {
         console.log(error);
       }
@@ -96,8 +90,8 @@ const HtmlLessons = ({
                 ko'rishni maslahat beramiz{" "}
               </p>
 
-              <HtmlCodes/>
-              <HtmlSideBar/>
+              <HtmlCodes />
+              <HtmlSideBar />
               <div className="video-card-block">
                 {/* {loading ? (
                   <h4>loding ....</h4>
@@ -130,11 +124,6 @@ const HtmlLessons = ({
                     ))
                 )} */}
                 {/*<Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />*/}
-                <HtmlVideo
-                  data={data}
-                  searchTitle={searchTitle}
-                  postQuery={postQuery}
-                />
 
                 <InternetConnection />
               </div>

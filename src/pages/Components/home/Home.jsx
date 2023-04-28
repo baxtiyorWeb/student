@@ -4,8 +4,8 @@ import { ApiServices } from "../../../setup/auth/api/api.servvices"
 import Videos from "./videos";
 import InternetConnection from "../../Components/internet-connection/internet-connection"
 import CardLessons from "./card-lessons/card-lessons"
-import { Link } from "react-router-dom"
-import { useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom"
+import PopupModal from "../popup-modal/popup-modal";
 const Home = ({
   searchTitle,
   setSearchTitle,
@@ -17,10 +17,9 @@ const Home = ({
   const [data, setData] = useState([]);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
-   const {videoUrlId} = useParams()
 
   startsForm = latest ? 3 : 1;
-
+  const {videoUrlId} = useParams()
 
 
   useEffect(() => {
@@ -66,6 +65,7 @@ const Home = ({
     <>
       <form autoComplete="off" onSubmit={handleSubmit}></form>
       <div className="home-page">
+        <PopupModal/>
         <div className=" container">
           <div className="block">
             {/* <Slider/> */}

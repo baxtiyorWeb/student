@@ -1,9 +1,11 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 const HtmlVideo = ({ data, searchTitle, postQuery }) => {
+  const {videoUrlId} = useParams()
   const navigate = useNavigate();
   function navigateFunc(item) {
-    navigate(`/view-lessons?${item}`, { replace: true });
+    navigate(`/view-lessons?${videoUrlId}`, { replace: true });
   }
   function storage(video, title, description, history) {
     localStorage.setItem("api", video);

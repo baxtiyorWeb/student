@@ -19,6 +19,7 @@ import Login from "../../../setup/auth/SignIn";
 import HtmlEntry from "../home/card-lessons/lessons/html/html-entry";
 import HtmlLessons from "../home/card-lessons/lessons/html/htmlLessonsCard";
 import Register from "../Register/Register";
+import Parapgraph from "../home/card-lessons/lessons/html/html-codes/parapgraph";
 const Main = ({toggle, setToggle}) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTitle, setSearchTitle] = useState("");
@@ -130,6 +131,7 @@ const Main = ({toggle, setToggle}) => {
                   startsForm={startsForm}/>}/>
             <Route path="*" element={<NotFound />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/paragraph" element={<Parapgraph />} />
           </Routes>
         </div>
       </div>

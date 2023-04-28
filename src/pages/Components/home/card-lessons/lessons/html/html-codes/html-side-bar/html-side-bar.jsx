@@ -6,10 +6,10 @@ const HtmlSideBar = () => {
     <div className="html-side-bar">
       <div className="container">
         <div className="navigation">
-          <Link className="side-bar-link" to="/home">
+          <Link className="side-bar-link" to="/html">
             <span>Headinglar</span>
           </Link>
-          <Link className="side-bar-link" to="/posts">
+          <Link className="side-bar-link" to="/paragraph">
             <span>Paragrap</span>
           </Link>
           <Link className="side-bar-link" to="/live-stream">

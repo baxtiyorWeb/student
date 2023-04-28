@@ -657,3 +657,113 @@ header .container {
   height: 100%;
   border: 1px solid #000;
 }
+.user-action .user-name h1 {
+  display: flex;
+  align-items: center;
+}
+.user-action .user-name h1 span {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+.user-action .user-name h1 span:hover {
+  background-color: #2b2b2b;
+}
+.user-action .user-name h1:hover span {
+  display: block;
+}
+.user-action .user-name span:nth-child(2) {
+  width: 70%;
+  display: flex;
+  align-items: center;  
+  height: 5vh;
+}
+
+.user-action .user-name span:nth-child(2) span:nth-child(1) {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+.user-action .user-name span:nth-child(2) span:nth-child(1):hover{
+  background-color: #2b2b2b;
+}
+.user-action .user-name span:nth-child(2):hover span:nth-child(1) {
+  display: block;
+}
+.popup-modal {
+  width: 500px;
+  height: 400px;
+  position: fixed;
+  right: 30%;
+  bottom: 20%;
+  z-index: 10;
+  border: 1px solid #fff;
+  background-color: #333333;
+  border-radius: 10px;
+  display: none;
+}
+.show-popup-modal {
+  width: 500px;
+  height: 400px;
+  position: fixed;
+  right: 30%;
+  bottom: 20%;
+  z-index: 10;
+  border: 1px solid #fff;
+  background-color: #333333;
+  border-radius: 10px;
+  display: block;
+}
+
+.re-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.re-input input{
+  display: none;
+  width: 300px;
+  padding: 10px;
+  border-bottom: 1px solid #5c5c5c;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  background-color: transparent;
+  color: #807e7e;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+.re-input input.showInput{
+  display: none;
+}
+.re-input input.input{
+  display: block;
+}
+.user-action .user-name h1.showInput{
+  display: none;
+}
+.user-action .user-name h1.input{
+  display: flex;
+}
+.user-action .user-name button{
+  width: 60px;
+  padding: 10px 10px 10px 10px ;
+  background-color: #5c5c5c;
+  color: rgb(209, 209, 209);
+  border: 2px solid #807e7e;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.user-action .user-name button.showInput{
+  display: none;
+}
+.user-action .user-name button.input{
+  display: flex;
+}

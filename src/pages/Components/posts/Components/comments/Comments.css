@@ -8,16 +8,23 @@
   width: 78%;
   position: fixed;
   bottom: 20px;
+  border: 1px solid rgba(66, 66, 66, 0.952);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
 }
 .post-input-el {
   width: 100%;
   padding: 15px;
   border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
+  border-top-left-radius: 30px; 
   outline: none;
   border: none;
   background: rgb(34, 34, 34);
   color: #ccc;
+  letter-spacing: 1px;
+  word-spacing: 5px;
 }
 .post-send-btn {
   background: rgb(27, 27, 27);
