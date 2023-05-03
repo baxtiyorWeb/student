@@ -131,7 +131,7 @@ const Main = ({toggle, setToggle}) => {
                   startsForm={startsForm}/>}/>
             <Route path="*" element={<NotFound />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/paragraph" element={<Parapgraph />} />
+            {/* <Route path="/paragraph" element={<Parapgraph />} /> */}
           </Routes>
         </div>
       </div>

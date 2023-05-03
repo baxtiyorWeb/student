@@ -26,7 +26,7 @@ main .container .hide-block {
 
 .side-bar {
   width: 20%;
-  height: 89vh;
+  height: 90vh;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -37,7 +37,7 @@ main .container .hide-block {
 }
 .side-bar-hide {
   width: 80px;
-  height: 89vh;
+  height: 90vh;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -54,8 +54,8 @@ main .container .hide-block {
   flex-direction: column;
 }
 .side-bar-hide .container .navigation .side-bar-link {
-  padding: 10px;
-  margin-top: 0px;
+  padding: 15px;
+  margin-top: -10px;
   text-decoration: none;
   color: #d4d4d4;
   display: flex;
@@ -86,7 +86,7 @@ main .container .hide-block {
   align-items: center;
   transition: 0.2s ease;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 5px;
 }
 .side-bar-hide .container .navigation .side-bar-link:hover {
@@ -94,7 +94,7 @@ main .container .hide-block {
   color: white;
 }
 .side-bar-hide .container .navigation .side-bar-link:focus {
-  background-color: rgb(230, 230, 230, 0.344);
+  background-color: rgba(230, 230, 230, 0.11);
   color: white;
 }
 .side-bar-hide .container .navigation .side-bar-link:active {
@@ -106,7 +106,7 @@ main .container .hide-block {
   color: white;
 }
 .side-bar .container .navigation .side-bar-link:focus {
-  background-color: rgb(230, 230, 230, 0.344);
+  background-color: rgba(230, 230, 230, 0.11);
   color: white;
 }
 .side-bar .container .navigation .side-bar-link:active {
@@ -116,6 +116,7 @@ main .container .hide-block {
 .side-bar .container .navigation .side-bar-link i {
   margin-right: 15px;
   padding: 5px;
+  font-size: 20px;
 }
 .home-page .container .block {
   width: 100%;
@@ -540,7 +541,14 @@ header .container {
   font-size: 28px;
   color: rgb(17, 96, 175);
 }
-
+.code-length {
+  font-size: 18px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.html-code:hover {
+  background-color: rgba(134, 134, 134, 0.164);
+}
 .html-side-bar {
   width: 20%;
   height: 89vh;
@@ -557,7 +565,7 @@ header .container {
   color: white;
 }
 .html-side-bar .container .navigation .side-bar-link:focus {
-  background-color: rgb(230, 230, 230, 0.344);
+  background-color: #f5f5f523;
   color: white;
 }
 .html-side-bar .container .navigation .side-bar-link:active {
@@ -677,22 +685,22 @@ header .container {
 .user-action .user-name span:nth-child(2) {
   width: 70%;
   display: flex;
-  align-items: center;  
+  align-items: center;
   height: 5vh;
 }
 
-.user-action .user-name span:nth-child(2) span:nth-child(1) {
+.user-action .user-about .user-name span span:nth-child(1) {
   display: none;
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
   margin-left: 15px;
 }
-.user-action .user-name span:nth-child(2) span:nth-child(1):hover{
+.user-action .user-name span span:nth-child(1):hover {
   background-color: #2b2b2b;
 }
-.user-action .user-name span:nth-child(2):hover span:nth-child(1) {
-  display: block;
+.user-action .user-name span:hover span:nth-child(1) {
+  display: inline;
 }
 .popup-modal {
   width: 500px;
@@ -719,12 +727,12 @@ header .container {
   display: block;
 }
 
-.re-input{
+.re-input {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.re-input input{
+.re-input input {
   display: none;
   width: 300px;
   padding: 10px;
@@ -736,24 +744,23 @@ header .container {
   background-color: transparent;
   color: #807e7e;
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.re-input input.showInput{
+.re-input input.showInput {
   display: none;
 }
-.re-input input.input{
+.re-input input.input {
   display: block;
 }
-.user-action .user-name h1.showInput{
+.user-action .user-name h1.showInput {
   display: none;
 }
-.user-action .user-name h1.input{
+.user-action .user-name h1.input {
   display: flex;
 }
-.user-action .user-name button{
+.user-action .user-name button {
   width: 60px;
-  padding: 10px 10px 10px 10px ;
+  padding: 10px 10px 10px 10px;
   background-color: #5c5c5c;
   color: rgb(209, 209, 209);
   border: 2px solid #807e7e;
@@ -761,9 +768,9 @@ header .container {
   border-radius: 10px;
 }
 
-.user-action .user-name button.showInput{
+.user-action .user-name button.showInput {
   display: none;
 }
-.user-action .user-name button.input{
+.user-action .user-name button.input {
   display: flex;
 }

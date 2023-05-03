@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Headings from './../headings';
 
 const HtmlSideBar = () => {
   return (
     <div className="html-side-bar">
       <div className="container">
         <div className="navigation">
-          <Link className="side-bar-link" to="/html">
+          <Link className="side-bar-link" to="/Headings">
             <span>Headinglar</span>
           </Link>
           <Link className="side-bar-link" to="/paragraph">

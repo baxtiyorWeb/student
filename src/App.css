@@ -7,20 +7,20 @@
   font-family: "Roboto" sans-serif;
   outline: none;
 }
-*::selection{
+*::selection {
   background-color: rgba(0, 0, 0, 0.486);
   color: #222;
   transition: all 0.3s ease;
 }
-::-webkit-scrollbar{
-  width: 20px;
+::-webkit-scrollbar {
+  width: 10px;
   background-color: rgb(22, 22, 22);
 }
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
   background-color: rgb(22, 22, 22);
 }
-::-webkit-scrollbar-thumb{
-  width: 20px;
+::-webkit-scrollbar-thumb {
+  width: 10px;
   height: 20px;
   border-radius: 30px;
   background-color: rgb(10, 10, 10);

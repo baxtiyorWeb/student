@@ -6,6 +6,7 @@ import InternetConnection from "../../Components/internet-connection/internet-co
 import CardLessons from "./card-lessons/card-lessons"
 import { Link, useParams } from "react-router-dom"
 import PopupModal from "../popup-modal/popup-modal";
+import Loading from './../../../layout/loading/loading';
 const Home = ({
   searchTitle,
   setSearchTitle,
@@ -17,6 +18,17 @@ const Home = ({
   const [data, setData] = useState([]);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
+  const [loading, setLoading] =  useState('')
+  const [time, setTime] = useState(5000)
+
+
+  function Loading(){
+    setTimeout(() => {
+      setTime(timer => timer ? "none": "block")
+      
+    }, time);
+  }
+
 
   startsForm = latest ? 3 : 1;
   const {videoUrlId} = useParams()
@@ -63,6 +75,7 @@ const Home = ({
 
   return (
     <>
+    <Loading style={{display: `${time}`}} />
       <form autoComplete="off" onSubmit={handleSubmit}></form>
       <div className="home-page">
         <PopupModal/>

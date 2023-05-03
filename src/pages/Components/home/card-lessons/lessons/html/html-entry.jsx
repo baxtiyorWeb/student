@@ -1,6 +1,6 @@
 import React from "react";
 import HtmlLessons from "./htmlLessonsCard";
-
+import HtmlSideBar from './html-codes/html-side-bar/html-side-bar';
 const HtmlEntry = ({
   searchTitle,
   setSearchTitle,
@@ -19,6 +19,7 @@ const HtmlEntry = ({
         handleSubmit={handleSubmit}
         startsForm={startsForm}
       />
+      <HtmlSideBar/>
     </>
   );
 };

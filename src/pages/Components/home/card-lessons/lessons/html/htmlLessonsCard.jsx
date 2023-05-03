@@ -4,12 +4,16 @@ import { ApiServices } from "./../../../../../../setup/auth/api/api.servvices";
 import InternetConnection from "./../../../../internet-connection/internet-connection";
 import HtmlCodes from "./html-codes/html-codes";
 import HtmlSideBar from "./html-codes/html-side-bar/html-side-bar";
+import Headings from "./html-codes/headings";
+import Parapgraph from "../html/html-codes/parapgraph";
+import Videos from "../../../videos"
 // import img1 from "../../../assets/images/img1.png";
 // import img2 from "../../../assets/images/img2.png";
 // import img3 from "../../../assets/images/img3.png";
 // import img4 from "../../../assets/images/img4.png";
 // import img5 from "../../../assets/images/img5.png";
 // import img6 from "../../../assets/images/img6.png";
+import { Route, Routes } from "react-router-dom";
 const HtmlLessons = ({
   searchTitle,
   setSearchTitle,
@@ -28,7 +32,6 @@ const HtmlLessons = ({
       try {
         const data = await ApiServices.fetching(`video?part=snippets&q=ok`);
         setData(data.data);
-        
       } catch (error) {
         console.log(error);
       }
@@ -82,7 +85,21 @@ const HtmlLessons = ({
               >
                 html bo'yicha to'liq darslik
               </h3>
-              <p style={{ color: "lightgreen", fontWeight: "600" }}>
+              <Routes>
+                <Route path="/" element={<Headings />} />
+                <Route path="/headings" element={<Headings />} />
+                <Route path="/paragraph" element={<Parapgraph />} />
+              </Routes>
+              <HtmlSideBar />
+              <Videos
+                data={data}
+                searchTitle={searchTitle}
+                // postQuery={postQuery}
+              />
+
+              <InternetConnection />
+              {/* 
+             <p style={{ color: "lightgreen", fontWeight: "600" }}>
                 HTML (HyperTextMarkupLanguage ya'ni "GiperMatn belgilash tili
                 hisoblanadi") Html web sitening strukturasi bo'yicha masul
                 hisoblanadi frontend uchun kerakli texnologiyalardan biri sizga
@@ -91,7 +108,6 @@ const HtmlLessons = ({
               </p>
 
               <HtmlCodes />
-              <HtmlSideBar />
               <div className="video-card-block">
                 {/* {loading ? (
                   <h4>loding ....</h4>
@@ -123,10 +139,7 @@ const HtmlLessons = ({
                       </div>
                     ))
                 )} */}
-                {/*<Videos data={data} searchTitle={searchTitle} postQuery={postQuery} />*/}
-
-                <InternetConnection />
-              </div>
+           
             </div>
           </div>
         </div>

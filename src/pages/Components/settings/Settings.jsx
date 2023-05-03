@@ -2,11 +2,12 @@ import React from "react";
 import img1 from "../../../assets/images/img1.png";
 const Settings = () => {
   const [toggle, setToggle] = React.useState(false);
+  const [text, setText] = React.useState(false);
   const [value, setValue] = React.useState("");
-  const removeSettings = e =>{
-    setToggle(!toggle)
-    setValue('')
-  }
+  const removeSettings = (e) => {
+    setToggle(!toggle);
+    setValue("");
+  };
   return (
     <div className="user-action">
       <div className="user-about">
@@ -45,7 +46,10 @@ const Settings = () => {
               className={`${toggle ? "input" : "showInput"}`}
               placeholder={"enter your Name"}
             />
-            <button className={`${toggle ? "input" : "showInput"}`} onClick={removeSettings}>
+            <button
+              className={`${toggle ? "input" : "showInput"}`}
+              onClick={removeSettings}
+            >
               save
             </button>
           </div>
@@ -55,7 +59,7 @@ const Settings = () => {
               color: "#fffc",
             }}
           >
-            {value ? value : 'Baxtiyor Qurbonnazarov'}
+            {value ? value : "Baxtiyor Qurbonnazarov"}
             <span
               className="fas fa-pen"
               onClick={() => setToggle(!toggle)}
@@ -67,7 +71,11 @@ const Settings = () => {
               fontSize: "20px",
             }}
           >
-            Im Frontend Developer <span className="fas fa-pen"></span>
+            {value ? value : "Im Frontend Developer"}{" "}
+            <span
+              className="fas fa-pen"
+              onClick={() => setToggle(!toggle)}
+            ></span>
           </span>
         </div>
       </div>
