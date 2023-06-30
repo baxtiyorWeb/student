@@ -18,20 +18,20 @@ const Home = ({
   const [data, setData] = useState([]);
   const postQuery = searchParams.get("post") || "";
   const latest = searchParams.has("latest");
-  const [loading, setLoading] =  useState('')
+  const [loading, setLoading] = useState('')
   const [time, setTime] = useState(5000)
 
 
-  function Loading(){
+  function Loading() {
     setTimeout(() => {
-      setTime(timer => timer ? "none": "block")
-      
+      setTime(timer => timer ? "none" : "block")
+
     }, time);
   }
 
 
   startsForm = latest ? 3 : 1;
-  const {videoUrlId} = useParams()
+  const { videoUrlId } = useParams()
 
 
   useEffect(() => {
@@ -75,10 +75,10 @@ const Home = ({
 
   return (
     <>
-    <Loading style={{display: `${time}`}} />
+      <Loading style={{ display: `${time}` }} />
       <form autoComplete="off" onSubmit={handleSubmit}></form>
       <div className="home-page">
-        <PopupModal/>
+        <PopupModal />
         <div className=" container">
           <div className="block">
             {/* <Slider/> */}
@@ -100,16 +100,16 @@ const Home = ({
                 <div className="box-list">Bepul</div>
               </div>
               <div className="courses-about">
-                  <Link to="/html-lessons">HTML</Link>
-                  <Link to="#">CSS</Link>
-                  <Link to="#">SASS</Link>
-                  <Link to="#">BOOTSTRAP</Link>
-                  <Link to="#">JAVASCRIPT</Link>
-                  <Link to="#">REACT</Link>
-                  <Link to="#">ANGULAR</Link>
-                  <Link to="#">VUE</Link>
+                <Link to="/html-lessons">HTML</Link>
+                <Link to="#">CSS</Link>
+                <Link to="#">SASS</Link>
+                <Link to="#">BOOTSTRAP</Link>
+                <Link to="#">JAVASCRIPT</Link>
+                <Link to="#">REACT</Link>
+                <Link to="#">ANGULAR</Link>
+                <Link to="#">VUE</Link>
               </div>
-              
+
               <h3
                 style={{
                   marginTop: "10px",
@@ -121,11 +121,10 @@ const Home = ({
                 sizga ba'zi video darslarni tavsiya qilamiz
               </h3>
               <div className="video-card-block">
-              <CardLessons/>
-
+                <CardLessons />
                 <Videos videoUrlId={videoUrlId} data={data} searchTitle={searchTitle} postQuery={postQuery} />
-                <InternetConnection/>
-                </div>
+                <InternetConnection />
+              </div>
             </div>
           </div>
         </div>

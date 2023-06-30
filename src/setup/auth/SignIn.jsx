@@ -39,9 +39,10 @@
 
 // export default SignIn;
 import React, { useEffect, useState } from "react";
-import { Link,
+import {
+  Link, useNavigate,
   //  useNavigate
-   } from "react-router-dom";
+} from "react-router-dom";
 import {
   auth,
   logInWithEmailAndPassword,
@@ -56,27 +57,51 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 function SignIn() {
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [user, loading] = useAuthState(auth);
-  // const navigatee = useNavigate();
+  const navigatee = useNavigate();
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return;
     }
-    if (user){
-      // navigatee("/login");
-    } 
+    if (user) {
+      navigatee("/home");
+      console.log(user.email)
+    }
   }, [user, loading]);
   return (
-    <div className="login">
-      <div className="login__container">
+    <div className="login"
+
+      style={{
+        "width": "100%",
+        "height": "100vh",
+      }}
+    >
+      <div className="login__container" style={{
+        "width": "100%",
+        "height": "100%",
+        "display": "flex",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "flexDirection": "column"
+      }}>
         <input
           type="text"
           className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
+          style={{
+            "width": "50%",
+            "borderRadius": 20,
+            "outline": "none",
+            "border": "none",
+            "backgroundColor": "#212121",
+            "textIndent": 10,
+            "color": "#888"
+          }}
         />
         <input
           type="password"
@@ -84,6 +109,15 @@ function SignIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          style={{
+            "width": "50%",
+            "borderRadius": 20,
+            "outline": "none",
+            "border": "none",
+            "backgroundColor": "#212121",
+            "textIndent": 10,
+            "color": "#888"
+          }}
         />
         <button
           className="login__btn"
@@ -92,7 +126,7 @@ function SignIn() {
           Login
         </button>
         <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
+          <i className="bx bxl-google"></i> Login with Google
         </button>
         <div>
           <Link to="/reset">Forgot Password</Link>

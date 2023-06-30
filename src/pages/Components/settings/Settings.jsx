@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import img1 from "../../../assets/images/img1.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../setup/auth/firebase/firebase";
+import { signOuts } from "../../../setup/auth/firebase/firebase";
+import { useNavigate } from "react-router-dom";
 const Settings = () => {
   const [toggle, setToggle] = React.useState(false);
   const [text, setText] = React.useState(false);
   const [value, setValue] = React.useState("");
+  const [user, loading] = useAuthState(auth);
+
+
+  const navigatee = useNavigate();
+
+
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) {
+      // navigatee("/home");
+      console.log(user.email)
+    }
+  }, [user, loading]);
+
+
   const removeSettings = (e) => {
     setToggle(!toggle);
     setValue("");
   };
   return (
-    <div className="user-action">
+    <div className="user-action" style={{
+      "width": "100%",
+      "height": "100vh"
+    }}>
       <div className="user-about">
         <div className="img">
           <img
@@ -79,6 +106,9 @@ const Settings = () => {
           </span>
         </div>
       </div>
+      <button style={{ "cursor": "pointer" }}
+        onClick={() => user ? auth.signOut() : navigatee("/login")}
+      >{user ? "signOut" : "SignIn"}</button>
     </div>
   );
 };

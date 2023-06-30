@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, useSearchParams} from "react-router-dom";
+import { Routes, Route, useSearchParams } from "react-router-dom";
 import Settings from "../settings/Settings";
 import "../../Components/Component.css";
 import Comments from "./../posts/Components/comments/Comments";
@@ -20,7 +20,7 @@ import HtmlEntry from "../home/card-lessons/lessons/html/html-entry";
 import HtmlLessons from "../home/card-lessons/lessons/html/htmlLessonsCard";
 import Register from "../Register/Register";
 import Parapgraph from "../home/card-lessons/lessons/html/html-codes/parapgraph";
-const Main = ({toggle, setToggle}) => {
+const Main = ({ toggle, setToggle, userName, setUserName }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTitle, setSearchTitle] = useState("");
   const [query, setQuery] = useState(searchParams.get("query"));
@@ -33,19 +33,19 @@ const Main = ({toggle, setToggle}) => {
   };
   return (
     <main>
-        <MainHeader
-            query={query}
-            setQuery={setQuery}
-            searchTitle={searchTitle}
-            setSearchTitle={setSearchTitle}
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-            toggle={toggle}
-            setToggle={setToggle}
-          />
+      <MainHeader
+        query={query}
+        setQuery={setQuery}
+        searchTitle={searchTitle}
+        setSearchTitle={setSearchTitle}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
       <div className="container">
-        <div className={!toggle ? "block": "hide-block"}>
-        
+        <div className={!toggle ? "block" : "hide-block"}>
+
           <Routes>
             <Route
               path="/"
@@ -106,10 +106,10 @@ const Main = ({toggle, setToggle}) => {
                 />
               }
             />
-            <Route path="/register" element={<Auth />} />
-            <Route exact path="/view-lessons/:videoUrlId" element={<VideoDetailPage /> }
+            <Route path="/register" element={<Auth />} userName={userName} setUserName={setUserName} />
+            <Route exact path="/view-lessons/:videoUrlId" element={<VideoDetailPage />}
             />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} userName={userName} setUserName={setUserName} />
             <Route
               path="/html"
               element={
@@ -124,11 +124,11 @@ const Main = ({toggle, setToggle}) => {
               }
             />
             <Route path="/html-lessons" element={<HtmlLessons searchTitle={searchTitle}
-                  setSearchTitle={setSearchTitle}
-                  searchParams={searchParams}
-                  setSearchParams={setSearchParams}
-                  handleSubmit={handleSubmit}
-                  startsForm={startsForm}/>}/>
+              setSearchTitle={setSearchTitle}
+              searchParams={searchParams}
+              setSearchParams={setSearchParams}
+              handleSubmit={handleSubmit}
+              startsForm={startsForm} />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/register" element={<Register />} />
             {/* <Route path="/paragraph" element={<Parapgraph />} /> */}

@@ -1,23 +1,25 @@
 import { initializeApp } from "firebase/app";
 // import { getDatabase } from "firebase/database";
-import { getFirestore,
-query,
-getDocs,
-collection,
-addDoc,
-where } from "firebase/firestore";
+import {
+  getFirestore,
+  query,
+  getDocs,
+  collection,
+  addDoc,
+  where
+} from "firebase/firestore";
 
 import {
- getAuth,
- // createUserWithEmailAndPassword,
- signInWithEmailAndPassword,
- signInWithPopup,
- GoogleAuthProvider,
- sendPasswordResetEmail,
- // signOut,
-  } from "firebase/auth";
+  getAuth,
+  // createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  sendPasswordResetEmail,
+  signOut,
+} from "firebase/auth";
 
- const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBX1TLBfXTOGgyXQwIbXOwjKji56EnP-IY",
   authDomain: "students-de195.firebaseapp.com",
   projectId: "students-de195",
@@ -30,7 +32,6 @@ import {
 export const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    alert('success')
   } catch (err) {
     console.error(err);
     alert(err.message);

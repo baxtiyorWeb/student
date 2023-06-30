@@ -1,7 +1,24 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../Components/Component.css";
-const sideBar = ({ toggle }) => {
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../setup/auth/firebase/firebase";
+
+const Sidebar = ({ toggle }) => {
+
+  const [user, loading] = useAuthState(auth);
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) {
+      // navigatee("/home");
+      console.log(user.email)
+    }
+  }, [user, loading]);
+
+
   return (
     <div className={!toggle ? "side-bar" : "side-bar-hide"}>
       <div className="container">
@@ -46,9 +63,9 @@ const sideBar = ({ toggle }) => {
             <i className="fas fa-regular fa-clock-rotate-left"></i>
             <span>History</span>
           </Link>
-          <Link className="side-bar-link" to="/register">
-            <i className="fas fa-solid fa-right-to-bracket"></i>
-            <span>LogOut</span>
+          <Link className="side-bar-link" to={user ? "/settings" : "/register "}>
+            <i className={user ? "fas fa-user" : "fas fa-solid fa-right-to-bracket"}></i>
+            <span>{user ? user.email.split("", 25) : "login"} <b> . . .</b></span>
           </Link>
         </div>
       </div>
@@ -56,4 +73,4 @@ const sideBar = ({ toggle }) => {
   );
 };
 
-export default sideBar;
+export default Sidebar;

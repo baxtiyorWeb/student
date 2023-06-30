@@ -87,6 +87,7 @@ button.ghost {
   margin: 20px 0;
   position: relative;
 }
+
 .user-page {
   position: absolute;
   top: 300px;
@@ -94,6 +95,7 @@ button.ghost {
   color: green;
   right: -0px;
 }
+
 .social-container a:nth-child(1) {
   border: 1px solid #dddddd;
   border-radius: 50%;
@@ -104,6 +106,7 @@ button.ghost {
   height: 40px;
   width: 40px;
 }
+
 .social-container a:nth-child(2) {
   border: 1px solid #dddddd;
   border-radius: 50%;
@@ -114,6 +117,7 @@ button.ghost {
   height: 40px;
   width: 40px;
 }
+
 .social-container a:nth-child(3) {
   border: 1px solid #dddddd;
   border-radius: 50%;
@@ -131,36 +135,48 @@ button.ghost {
   align-items: center;
   flex-direction: column;
 }
-.login {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.login__container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: #dcdcdc;
-  padding: 30px;
-}
+
+
+
 .login__textBox {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
 }
+
 .login__btn {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
   border: none;
   color: white;
-  background-color: black;
+  background-color: #9f9f9f;
+  cursor: pointer;
+  color: #333;
+  font-family: cursive;
+  padding: 13px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.bxl-google {
+  font-size: 23px;
+  padding: 5px;
+  margin: 3px;
+
+}
+
 .login__google {
-  background-color: #4285f4;
+  padding: 10px;
+  background-color: #a4a4a4;
+  font-size: 14px;
+  font-weight: 800;
+  color: #333;
+  cursor: pointer;
 }
+
 .login div {
   margin-top: 7px;
 }
